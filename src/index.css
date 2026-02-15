@@ -6,6 +6,59 @@
 
 @layer base {
   :root {
+    --background: 210 20% 98%;
+    --foreground: 228 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 228 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 25% 12%;
+
+    --primary: 190 80% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 228 18% 30%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 12% 45%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 228 25% 7%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 190 80% 42%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 20% 96%;
+    --sidebar-foreground: 215 12% 45%;
+    --sidebar-primary: 190 80% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 92%;
+    --sidebar-accent-foreground: 228 25% 12%;
+    --sidebar-border: 214 20% 90%;
+    --sidebar-ring: 190 80% 42%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(190, 80%, 42%), hsl(210, 90%, 50%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(210, 20%, 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(38, 92%, 50%), hsl(25, 95%, 50%));
+    --shadow-glow: 0 0 20px -5px hsl(190 80% 42% / 0.15);
+    --shadow-card: 0 4px 24px -4px hsl(228 25% 80% / 0.3);
+  }
+
+  .dark {
     --background: 228 25% 7%;
     --foreground: 210 20% 92%;
 
@@ -75,8 +128,13 @@
 
 @layer utilities {
   .glass-card {
-    background: linear-gradient(145deg, hsl(228 22% 11% / 0.8), hsl(228 22% 9% / 0.6));
+    background: linear-gradient(145deg, hsl(0 0% 100% / 0.9), hsl(210 20% 98% / 0.7));
     backdrop-filter: blur(12px);
+    border: 1px solid hsl(214 20% 88% / 0.6);
+  }
+
+  .dark .glass-card {
+    background: linear-gradient(145deg, hsl(228 22% 11% / 0.8), hsl(228 22% 9% / 0.6));
     border: 1px solid hsl(228 15% 18% / 0.6);
   }
 

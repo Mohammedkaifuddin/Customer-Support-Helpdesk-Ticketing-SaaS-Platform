@@ -11,7 +11,10 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
+  Sun,
+  Moon,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -26,6 +29,7 @@ const navItems = [
 export function AppSidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   return (
     <aside
@@ -70,6 +74,17 @@ export function AppSidebar() {
 
       {/* Bottom */}
       <div className="px-2 py-4 border-t border-border space-y-1">
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="flex items-center gap-3 px-3 py-2.5 w-full rounded-lg text-sm text-sidebar-foreground hover:text-foreground hover:bg-sidebar-accent transition-colors"
+        >
+          {theme === "dark" ? (
+            <Sun className="w-4 h-4 shrink-0" />
+          ) : (
+            <Moon className="w-4 h-4 shrink-0" />
+          )}
+          {!collapsed && <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>}
+        </button>
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="flex items-center gap-3 px-3 py-2.5 w-full rounded-lg text-sm text-sidebar-foreground hover:text-foreground hover:bg-sidebar-accent transition-colors"
